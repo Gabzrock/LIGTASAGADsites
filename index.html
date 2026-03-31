@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>View Raw GeoJSON</title>
+</head>
+<body>
+    <pre id="geojson-content"></pre>
+
+    <script>
+        // Use Fetch API to load local geojson (requires a local web server)
+        fetch('LIGTAS-AGAD_sites2.geojson')
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('geojson-content').textContent = JSON.stringify(data, null, 2);
+            })
+            .catch(error => console.error('Error:', error));
+    </script>
+</body>
+</html>
